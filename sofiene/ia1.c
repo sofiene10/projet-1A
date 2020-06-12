@@ -18,6 +18,9 @@ void sofien(SDL_Surface *ecran)
     SDL_Rect positionDot;
     positionDot.x = 200;
     positionDot.y = 400;
+/*SDL_Rect positionp;
+    positionDot.x = 600;
+    positionDot.y = 400;*/
     for (i = 0; i < 100; i++)
     {
         if (positionDot.x < 400)
@@ -27,14 +30,18 @@ void sofien(SDL_Surface *ecran)
         else
         {
             do
-            {
+            {  
                 positionDot.x -= 10;
                 SDL_BlitSurface(WBG, NULL, ecran, &positionFond);
 
                 SDL_BlitSurface(image, NULL, ecran, &positionDot);
-        SDL_Flip(ecran);
-
-            } while (positionDot.x > 20);
+        	SDL_Flip(ecran);
+ /*if (positionp.x-positionDot.x<=20)
+			{
+				positionDot.x=x;
+			}
+else {positionDot.x -= 10;}*/ 
+	    }while (positionDot.x > 20);
         }
 
         SDL_BlitSurface(WBG, NULL, ecran, &positionFond);
